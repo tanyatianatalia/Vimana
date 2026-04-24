@@ -5118,7 +5118,7 @@ void OnBar()
                     {prime=0;//
                     if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true){P();} else{Q();} Alert("Bull"); Top(); E=price;} else{Alert("Bull"); Top(); E=price;}}
-                else if(Price>signal){Alert("U+1F943 "/*,"🥃"*/,"Whisky"); Top(); E=price;} else{Alert("U+1F377 ",/*"🍷",*/"Wine"); Bott(); D=price;}
+                else if((prime==0)&&(Price>signal)){prime=0; Alert("U+1F943 "/*,"🥃"*/,"Whisky"); Top(); E=price;} else{prime=0;}
                 signal=0; toll=0; tally=""; GF=true; signature=true;
                 }
             if((toll==1)&&((tally=="Sell")||(fg=="Down")))
@@ -5132,7 +5132,7 @@ void OnBar()
                     {prime=1;//
                     if(((A==false)||(B==true))&&((u==false)||(v==true)))
                         {A(); if(C==false){P();} else{Q();} Alert("Bear"); Bott(); D=price;} else{Alert("Bear"); Bott(); D=price;}}
-                else if(Price<signal){Alert("U+1F377 ",/*"🍷",*/"Wine"); Bott(); D=price;} else{Alert("U+1F943 "/*,"🥃"*/,"Whisky"); Top(); E=price;}
+                else if((prime==1)&&(Price<signal)){prime=1; Alert("U+1F377 ",/*"🍷",*/"Wine"); Bott(); D=price;} else{prime=1;}
                 signal=0; toll=0; tally=""; GF=true; signature=true;
                 }
             if((count==1)&&((tally=="Buy")||(fg=="Up")))
@@ -5146,7 +5146,7 @@ void OnBar()
                     {prime=0;//
                     if(((A==true)||(B==false))&&((u==true)||(v==false)))
                         {B(); if(C==true){P();} else{Q();} Alert("Hawk"); Top(); E=price;} else{Alert("Hawk"); Top(); E=price;}}
-                else if(Price>signal){Alert("U+1F4A7 ",/*"💧",*/"Watter"); Top(); E=price;} else{Alert("U+1FA78 ",/*"🩸",*/"Blood"); Bott(); D=price;}
+                else if((prime==0)&&(Price>signal)){prime=0; Alert("U+1F4A7 ",/*"💧",*/"Watter"); Top(); E=price;} else{prime=0;}
             count=0; tally=""; GF=true; signature=true;
                 }
             if((count==1)&&((tally=="Sell")||(fg=="Down")))
@@ -5160,7 +5160,7 @@ void OnBar()
                     {prime=1;//
                     if(((A==false)||(B==true))&&((u==false)||(v==true)))
                         {A(); if(C==false){P();} else{Q();} Alert("Dove"); Bott(); D=price;} else{Alert("Dove"); Bott(); D=price;}}
-                else if(Price<signal){Alert("U+1FA78 ",/*"🩸",*/"Blood"); Bott(); D=price;} else{Alert("U+1F4A7 ",/*"💧",*/"Watter"); Top(); E=price;}
+                else if((prime==1)&&(Price<signal)){prime=1; Alert("U+1FA78 ",/*"🩸",*/"Blood"); Bott(); D=price;} else{prime=1;}
                 count=0; tally=""; GF=true; signature=true;
                 } if(prime==0){Print("Flying");} else if(prime==1){Print("Falling");}
             }
